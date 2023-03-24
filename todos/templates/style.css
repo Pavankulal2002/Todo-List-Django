@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+}
+
+.input{
+   
+    display: grid;
+    place-items: center;
+}
+body{
+    background-color: rgb(196, 173, 196);
+}
+
+.output .todo{
+    border: 5px solid rgb(66, 191, 162);
+    padding-left: 15%;
+    display: block;
+}
+.output .todo a{
+background-color: rgb(205, 84, 14);
+}

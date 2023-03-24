@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        .input{
+           
+            display: grid;
+            place-items: center;
+        }
+        body{
+            background-color: rgb(196, 173, 196);
+        }
+        
+        .output .todo{
+            border: 5px solid rgb(66, 191, 162);
+            padding-left: 15%;
+            display: block;
+            background-color: aliceblue;
+        }
+        .output .todo a{
+        background-color: rgb(205, 84, 14);
+        }
+    </style>
+    <title>TODO LIST</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="center">TODO LIST</h1>
+    </div>
+
+    <div class="input">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" id="td" name="titl" placeholder="Enter TODO here">
+            <button type="submit">ADD</button>
+        </form>
+    </div>
+
+    <div class="output">
+        {% for todolist in todos reversed %}
+        <div class="todo">
+            <h3>{{todolist.title }}</h3><a href="delete/{{todolist.id}}">Delete</a>
+        </div>
+        {% endfor %}
+       
+
+    </div>
+
+</body>
+
+</html>
